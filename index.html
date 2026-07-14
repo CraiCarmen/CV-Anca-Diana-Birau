@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anca-Diana Birău — Talent Acquisition &amp; HR Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0a1a33;
+    --navy-mid:#123a66;
+    --blue:#1f5fb0;
+    --blue-bright:#3b82e0;
+    --slate:#4b5768;
+    --slate-light:#8792a3;
+    --paper:#f6f7fa;
+    --paper-card:#ffffff;
+    --line:#e4e8ef;
+    --orange:#e8823d;
+    --orange-soft:#fbead9;
+    --ink:#151d2b;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{font-family:'Sora', sans-serif;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+
+  /* ---------- SHEET WRAPPER ---------- */
+  .sheet{
+    max-width:1040px;
+    margin:32px auto;
+    background:var(--paper-card);
+    box-shadow:0 30px 60px -20px rgba(10,26,51,.25), 0 2px 8px rgba(10,26,51,.06);
+    border-radius:18px;
+    overflow:hidden;
+  }
+
+  /* ---------- HEADER ---------- */
+  header.hero{
+    position:relative;
+    padding:52px 56px 46px;
+    background:
+      radial-gradient(1100px 420px at -10% -40%, rgba(59,130,224,.55), transparent 60%),
+      linear-gradient(120deg, var(--navy-deep) 0%, var(--navy-mid) 55%, var(--blue) 100%);
+    color:#fff;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute;
+    right:-120px; top:-140px;
+    width:420px; height:420px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(232,130,61,.35), transparent 65%);
+    pointer-events:none;
+  }
+  header.hero::before{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:4px;
+    background:linear-gradient(90deg, var(--blue-bright), var(--orange) 130%);
+  }
+
+  .hero-top{
+    position:relative;
+    z-index:2;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:24px;
+  }
+
+  .name-block .eyebrow{ color:rgba(255,255,255,.6); margin-bottom:10px;}
+  .name-block h1{
+    font-size:2.5rem;
+    font-weight:800;
+    letter-spacing:-.02em;
+    line-height:1.05;
+  }
+  .name-block .role{
+    margin-top:10px;
+    font-size:1.05rem;
+    font-weight:500;
+    color:#cfe0f7;
+  }
+  .name-block .role span{color:var(--orange); font-weight:600;}
+
+  .contact-list{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+    font-size:.86rem;
+    color:#dbe7fa;
+    text-align:right;
+    min-width:220px;
+  }
+  .contact-list div{display:flex; gap:8px; justify-content:flex-end; align-items:center;}
+  .contact-list .ct-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--orange);
+    font-weight:600;
+  }
+  .contact-list .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--orange); flex:none;
+  }
+
+  /* ---------- LIFECYCLE STEPPER (signature element) ---------- */
+  .lifecycle{
+    position:relative;
+    z-index:2;
+    margin-top:38px;
+    padding-top:26px;
+    border-top:1px solid rgba(255,255,255,.14);
+  }
+  .lifecycle .eyebrow{color:rgba(255,255,255,.55); margin-bottom:16px;}
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:0;
+    position:relative;
+  }
+  .steps::before{
+    content:"";
+    position:absolute;
+    top:15px; left:6%; right:6%;
+    height:2px;
+    background:linear-gradient(90deg, var(--blue-bright), var(--orange));
+    opacity:.55;
+    z-index:0;
+  }
+  .step{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    padding-right:10px;
+  }
+  .step .num{
+    width:30px; height:30px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    font-weight:600;
+    background:var(--navy-deep);
+    border:2px solid var(--blue-bright);
+    color:#fff;
+  }
+  .step:last-child .num{border-color:var(--orange); background:var(--orange);}
+  .step .label{
+    font-size:.78rem;
+    font-weight:600;
+    color:#f1f5fb;
+    line-height:1.3;
+  }
+
+  /* ---------- BODY GRID ---------- */
+  .body-grid{
+    display:grid;
+    grid-template-columns:280px 1fr;
+  }
+
+  /* ---------- SIDEBAR ---------- */
+  aside{
+    background:#f0f3f8;
+    padding:42px 32px;
+    border-right:1px solid var(--line);
+  }
+  .side-section{margin-bottom:38px;}
+  .side-section:last-child{margin-bottom:0;}
+  .side-section .eyebrow{color:var(--blue); margin-bottom:14px; display:flex; align-items:center; gap:8px;}
+  .side-section .eyebrow::before{
+    content:"";
+    width:14px; height:2px;
+    background:var(--orange);
+    display:inline-block;
+  }
+
+  .tag-group{margin-bottom:18px;}
+  .tag-group:last-child{margin-bottom:0;}
+  .tag-group h4{
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--slate);
+    font-weight:600;
+    margin-bottom:9px;
+  }
+  .tags{display:flex; flex-wrap:wrap; gap:7px;}
+  .tag{
+    font-size:.74rem;
+    font-weight:600;
+    padding:5px 11px;
+    border-radius:999px;
+    background:#fff;
+    border:1px solid var(--line);
+    color:var(--navy-mid);
+  }
+  .tag.hi{
+    background:linear-gradient(120deg, var(--blue) 0%, var(--blue-bright) 100%);
+    color:#fff;
+    border-color:transparent;
+    box-shadow:0 4px 10px -4px rgba(31,95,176,.6);
+  }
+  .tag.orange{
+    background:var(--orange-soft);
+    color:#a1500f;
+    border-color:#f3cfa4;
+  }
+
+  .edu-item{margin-bottom:6px;}
+  .edu-item .deg{font-weight:700; font-size:.92rem; color:var(--ink);}
+  .edu-item .school{font-size:.82rem; color:var(--slate); margin-top:3px;}
+  .edu-item .when{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.7rem;
+    color:var(--slate-light);
+    margin-top:6px;
+  }
+
+  .lang-row{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:.86rem; margin-bottom:10px;
+  }
+  .lang-row:last-child{margin-bottom:0;}
+  .lang-row .level{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    color:#fff;
+    background:var(--navy-mid);
+    padding:2px 8px;
+    border-radius:5px;
+  }
+  .lang-row .level.native{background:var(--orange);}
+
+  .strengths li{
+    font-size:.86rem;
+    color:var(--slate);
+    padding-left:16px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .strengths li::before{
+    content:"";
+    position:absolute; left:0; top:8px;
+    width:6px; height:6px; border-radius:50%;
+    background:var(--blue-bright);
+  }
+  .strengths{list-style:none;}
+
+  /* ---------- MAIN ---------- */
+  main{padding:42px 48px 52px;}
+  .main-section{margin-bottom:38px;}
+  .main-section:last-child{margin-bottom:0;}
+  .sec-head{
+    display:flex; align-items:baseline; gap:12px;
+    margin-bottom:18px;
+  }
+  .sec-head h2{
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--navy-deep);
+  }
+  .sec-head .rule{
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, var(--line), transparent);
+  }
+
+  .profile-text{
+    font-size:.95rem;
+    color:#33404f;
+    max-width:64ch;
+    text-align:justify;
+    text-justify:inter-word;
+  }
+  .profile-text strong{color:var(--navy-deep);}
+
+  .job{
+    position:relative;
+    padding-left:26px;
+    padding-bottom:30px;
+    border-left:2px solid var(--line);
+    margin-left:4px;
+  }
+  .job:last-child{padding-bottom:0;}
+  .job::before{
+    content:"";
+    position:absolute; left:-7px; top:2px;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--paper-card);
+    border:3px solid var(--blue-bright);
+  }
+  .job.current::before{border-color:var(--orange);}
+
+  .job-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    flex-wrap:wrap; gap:8px; margin-bottom:4px;
+  }
+  .job-title{font-size:1.02rem; font-weight:700; color:var(--ink);}
+  .job-when{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.7rem;
+    color:#fff;
+    background:var(--navy-mid);
+    padding:3px 10px;
+    border-radius:5px;
+    white-space:nowrap;
+  }
+  .job.current .job-when{background:var(--orange);}
+  .job-org{font-size:.86rem; color:var(--blue); font-weight:600; margin-bottom:12px;}
+
+  .job ul{list-style:none; margin-bottom:12px;}
+  .job ul li{
+    font-size:.88rem;
+    color:#3c4657;
+    padding-left:18px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .job ul li::before{
+    content:"›";
+    position:absolute; left:0; top:0;
+    color:var(--orange);
+    font-weight:700;
+  }
+  .job ul li b{color:var(--navy-deep); font-weight:700;}
+
+  .achv{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--orange);
+    border-radius:8px;
+    padding:12px 16px;
+  }
+  .achv .eyebrow{color:var(--orange); margin-bottom:6px;}
+  .achv ul{margin:0;}
+  .achv ul li::before{content:"★"; font-size:.65rem; top:2px; color:var(--orange);}
+
+  footer{
+    text-align:center;
+    padding:22px;
+    font-size:.72rem;
+    color:var(--slate-light);
+    background:#f0f3f8;
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:760px){
+    .body-grid{grid-template-columns:1fr;}
+    aside{border-right:none; border-bottom:1px solid var(--line);}
+    header.hero{padding:38px 26px;}
+    main{padding:32px 26px;}
+    .hero-top{flex-direction:column;}
+    .contact-list{text-align:left;}
+    .contact-list div{justify-content:flex-start;}
+    .steps{grid-template-columns:repeat(2,1fr); row-gap:20px;}
+    .steps::before{display:none;}
+    .name-block h1{font-size:1.9rem;}
+  }
+
+  @media print{
+    body{background:#fff;}
+    .sheet{box-shadow:none; margin:0; border-radius:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="name-block">
+        <div class="eyebrow">Curriculum Vitae</div>
+        <h1>Anca&#8209;Diana Birău</h1>
+        <div class="role">Talent Acquisition &amp; HR Administration Consultant · <span>Full&#8209;Cycle Recruitment</span></div>
+      </div>
+      <div class="contact-list">
+        <div><span class="ct-label">Location:</span> Timișoara, Romania <span class="dot"></span></div>
+        <div><span class="ct-label">Telephone:</span> +40 773 768 034 <span class="dot"></span></div>
+        <div><span class="ct-label">Email:</span> birauancaa@yahoo.com <span class="dot"></span></div>
+        <div><span class="ct-label">LinkedIn:</span> linkedin.com/in/anca&#8209;diana&#8209;birau&#8209;040735198 <span class="dot"></span></div>
+      </div>
+    </div>
+
+    <div class="lifecycle">
+      <div class="eyebrow">The recruitment lifecycle I own end‑to‑end</div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><div class="label">Candidate<br>Sourcing</div></div>
+        <div class="step"><div class="num">02</div><div class="label">ATS &amp; Pipeline<br>Management</div></div>
+        <div class="step"><div class="num">03</div><div class="label">Behavioral<br>Interviewing</div></div>
+        <div class="step"><div class="num">04</div><div class="label">Offer &amp;<br>Contracting</div></div>
+        <div class="step"><div class="num">05</div><div class="label">Onboarding &amp;<br>Integration</div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="body-grid">
+
+    <aside>
+      <div class="side-section">
+        <div class="eyebrow">Core Competencies</div>
+        <div class="tag-group">
+          <h4>Talent Acquisition</h4>
+          <div class="tags">
+            <span class="tag hi">Candidate Sourcing</span>
+            <span class="tag hi">Talent Acquisition</span>
+            <span class="tag hi">Behavioral Interviewing</span>
+            <span class="tag">Full‑Cycle Recruitment</span>
+          </div>
+        </div>
+        <div class="tag-group">
+          <h4>HR Systems</h4>
+          <div class="tags">
+            <span class="tag orange">Applicant Tracking System (ATS)</span>
+            <span class="tag">SAP HR Module</span>
+            <span class="tag">MS Office Suite</span>
+          </div>
+        </div>
+        <div class="tag-group">
+          <h4>HR Administration</h4>
+          <div class="tags">
+            <span class="tag orange">Onboarding</span>
+            <span class="tag">Contract Administration</span>
+            <span class="tag">Personnel Records</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="eyebrow">Education</div>
+        <div class="edu-item">
+          <div class="deg">B.A. in Human Resources</div>
+          <div class="school">West University of Timișoara<br>Faculty of Sociology &amp; Psychology</div>
+          <div class="when">SEP 2018 — JUN 2021</div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="eyebrow">Languages</div>
+        <div class="lang-row"><span>Romanian</span><span class="level native">Native</span></div>
+        <div class="lang-row"><span>English</span><span class="level">B1 · Intermediate</span></div>
+      </div>
+
+      <div class="side-section">
+        <div class="eyebrow">Core Strengths</div>
+        <ul class="strengths">
+          <li>Detail‑oriented &amp; highly organized</li>
+          <li>Results‑driven, process‑focused</li>
+          <li>Professional communication</li>
+          <li>Cross‑team collaboration</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main>
+      <section class="main-section">
+        <div class="sec-head"><h2>Professional Profile</h2><div class="rule"></div></div>
+        <p class="profile-text">
+          Results‑driven Recruitment &amp; HR Administration Consultant with <strong>6+ years of experience</strong>
+          driving the full recruitment lifecycle end‑to‑end — from <strong>candidate sourcing</strong> and
+          <strong>behavioral interviewing</strong> through offer, contracting, and <strong>onboarding</strong>.
+          Conducts <strong>5–10 candidate interviews per day</strong> across concurrent hiring pipelines without
+          compromising rigor or candidate experience, and currently oversees HR administration for a workforce of
+          <strong>20 employees</strong>, from records and contracts to day‑to‑day support. Highly skilled at managing
+          high‑volume candidate pipelines within an <strong>Applicant Tracking System (ATS)</strong> and SAP HR, with a
+          sharp eye for accuracy, structure, and continuous process improvement. Now seeking to bring this
+          high‑throughput, detail‑driven approach to a <strong>Talent Acquisition</strong> or HR Administration role
+          within a fast‑paced, dynamic organization.
+        </p>
+      </section>
+
+      <section class="main-section">
+        <div class="sec-head"><h2>Professional Experience</h2><div class="rule"></div></div>
+
+        <div class="job current">
+          <div class="job-top">
+            <div class="job-title">Recruitment Consultant</div>
+            <div class="job-when">SEP 2021 — PRESENT</div>
+          </div>
+          <div class="job-org">Prohuman Apt · Timișoara</div>
+          <ul>
+            <li>Managed <b>full‑cycle recruitment</b> — from <b>candidate sourcing</b> to offer — for a broad range of open positions across multiple departments.</li>
+            <li>Planned and led <b>behavioral interviewing</b> sessions to assess candidate fit, competencies, and long‑term potential.</li>
+            <li>Prepared employment contracts and coordinated the complete signing process, ensuring accuracy and compliance.</li>
+            <li>Maintained and updated employee records in the SAP HR database, safeguarding data integrity.</li>
+            <li>Owned candidate communication throughout the recruitment and <b>onboarding</b> journey, ensuring a smooth transition into new roles.</li>
+            <li>Provided administrative support to new hires during and after the probationary period.</li>
+          </ul>
+          <div class="achv">
+            <div class="eyebrow">Key Achievements</div>
+            <ul>
+              <li>Ran multiple concurrent recruitment pipelines in parallel, improving average time‑to‑fill for open roles.</li>
+              <li>Expanded ownership into HR administration, taking on additional responsibilities beyond the core recruiter role.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">HR Intern</div>
+            <div class="job-when">MAR 2021 — JUL 2021</div>
+          </div>
+          <div class="job-org">Eugene Estate · Timișoara</div>
+          <ul>
+            <li>Supported recruitment operations, including interview scheduling and candidate database management within the <b>Applicant Tracking System (ATS)</b>.</li>
+            <li>Actively participated in conducting initial screening interviews.</li>
+            <li>Optimized the internal candidate database, improving data accuracy and accessibility for the recruitment team.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>Anca‑Diana Birău — Talent Acquisition &amp; HR Administration Consultant · References available on request</footer>
+</div>
+
+</body>
+</html>
